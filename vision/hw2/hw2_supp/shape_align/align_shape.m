@@ -1,6 +1,8 @@
 function T = align_shape(im1, im2)
 
 tic;
+maxIterations = 50;
+
 [y1, x1] = find(im1);
 [y2, x2] = find(im2);
 
@@ -20,10 +22,16 @@ X(2:2:end, 5) = y1;
 X(1:2:end, 3) = 1;
 X(2:2:end, 6) = 1;
 
-T = [1; 0; dX; 0; 1; dY];
+Tnew = [1; 0; dX; 0; 1; dY];
+stopVal = 3000;
+threshold = 0.005;
 
-for iterations = 1:40
-    xPrime = X * T;
+for iterations = 1:maxIterations
+     if stopVal < threshold
+         break
+     end
+    
+    xPrime = X * Tnew;
     
     x1 = xPrime(1:2:end);
     y1 = xPrime(2:2:end);
@@ -47,13 +55,15 @@ for iterations = 1:40
     b(1:2:end) = xClosest;
     b(2:2:end) = yClosest;
     
-    T = X \ b;
-    
+    Told = Tnew;
+    Tnew = X \ b;
+    stopVal = sum((Told - Tnew).^2);
 end
-toc
 
-T = [T(1), T(2), T(3); T(4), T(5), T(6)];
+T = [Tnew(1), Tnew(2), Tnew(3); Tnew(4), Tnew(5), Tnew(6)];
 aligned = getAligned(T, im1, x1, y1);
+toc
 dispim = displayAlignment(im1, im2, aligned, true);
+figure;
 imagesc(dispim);
 evalAlignment(aligned, im2)
