@@ -17,9 +17,9 @@ end
 figure;
 imshow(imread('images\hotel.seq0.png'));
 hold on;
-rands = randi([1,size(keyXs, 2)], 1, 20);
-for i = 1:size(keyXs, 2) - 1
-    plot(newXs(1:51, rands(i)), newYs(1:51, rands(i)));
+rands = randi([1,size(keyXs, 2) - 1], 1, 20);
+for i = 1:20
+    plot(newXs(1:50, rands(i)), newYs(1:50, rands(i)));
 end
 
 figure;

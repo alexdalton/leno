@@ -7,14 +7,14 @@ imdir = fullfile(maindir, 'data', 'images');
 gtdir = fullfile(maindir, 'data', 'human');
 resultbasedir = fullfile(maindir, 'results');
 addpath('./util');
-addpath('./solutions'); % change to your solutions directory
+addpath('./data/solutions'); % change to your solutions directory
 
 makehtml = true; % optional, for creating html pages for results
 overwrite = true; % set to false if you want to skip already processed images
 
 methods = {'gradient', 'oriented'};
 
-for m = 1:numel(methods) % choose which methods to run
+for m = 1:1%numel(methods) % choose which methods to run
   
   close all;
   
@@ -34,7 +34,7 @@ for m = 1:numel(methods) % choose which methods to run
     im = im2double(imread(imfn));
     switch method
       case 'gradient'
-        bmap = edgeGradient(im); % you write this
+        bmap = edgeOrientedFilters(im);%bmap = edgeGradient(im); % you write this
       case 'oriented'
         bmap = edgeOrientedFilters(im); % you write this
       otherwise 

@@ -32,18 +32,16 @@ for i = 1:numIterations
     It = im1_interp_new - im0_interp;
 
     uv = inv(M) * -[sum(sum(Ix_interp.*It));sum(sum(Iy_interp.*It))];
-    u = uv(1);
-    v = uv(2);
     
-    xCoords = xCoords + u;
-    yCoords = yCoords + v;
+    xCoords = xCoords + uv(1);
+    yCoords = yCoords + uv(2);
     
     newVal = sum(sum((im1_interp - im1_interp_new).^2));
     stopVal = abs(oldVal - newVal);
     oldVal = newVal;
 
-    newX = newX + u;
-    newY = newY + v;
+    newX = newX + uv(1);
+    newY = newY + uv(2);
 end
 
 if abs(newX) < wsize && abs(newY) < wsize
