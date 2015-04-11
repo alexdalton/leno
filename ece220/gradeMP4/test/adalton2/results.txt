@@ -1,0 +1,29 @@
+Submission points
+********************
+Lost 0 points
+
+svn: '.' is not a working copy
+******** Compilation Results: ********
+No compilation errors
+
+********** Test Number 1 **********
+Total error is 0.000000 percent.
+
+-0 points
+
+********** Test Number 2 **********
+Total error is 0.000000 percent.
+
+-0 points
+
+********** Test Number 3 **********
+Total error is 0.000000 percent.
+
+-0 points
+
+********** Challenge **********
+Total error is 0.000000 percent.
+
+Challenge Passed
+
+Functionality score 100/80

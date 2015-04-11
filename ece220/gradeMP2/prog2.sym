@@ -1,0 +1,33 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	GET_NEXT_CHAR     3004
+//	FIND_SPACE        3016
+//	DONE              301A
+//	STR_ADDR          301F
+//	SPACE             3020
+//	NEW_LINE          3021
+//	CHAR_RETURN       3022
+//	DECODE            3023
+//	OPERATOR          3032
+//	EXPO              3041
+//	DE_ERR            3044
+//	DECODE_DONE       3047
+//	DECODE_R1         304B
+//	DECODE_R5         304C
+//	DECODE_R7         304D
+//	OP_ADD            304E
+//	OP_MIN            304F
+//	OP_DIV            3050
+//	OP_MUL            3051
+//	OP_EXP            3052
+//	ZERO              3053
+//	NINE              3054
+//	ERR_MSG           3055
+//	MULT_TEN          306A
+//	MULT_LOOP         306E
+//	MULT_TEN_R1       3075
+//	MULT_TEN_R2       3076
+//	TEN               3077
+

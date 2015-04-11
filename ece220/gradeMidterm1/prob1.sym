@@ -1,0 +1,25 @@
+// Symbol table
+// Scope level 0:
+//	Symbol Name       Page Address
+//	----------------  ------------
+//	LOOP              3005
+//	CONT              3014
+//	END               3016
+//	PRINT_HEX         3017
+//	DIG_LOOP          301F
+//	BIT_LOOP          3021
+//	MSB_CLEAR         3025
+//	HIGH_DIGIT        302D
+//	PRINT_DIGIT       302E
+//	SAVE_R0           303A
+//	SAVE_R3           303B
+//	SAVE_R4           303C
+//	SAVE_R5           303D
+//	SAVE_R6           303E
+//	SAVE_R7           303F
+//	ASC_HIGH          3040
+//	X_LOC             3041
+//	SPACE             3042
+//	NEWLINE           3043
+//	ASCII_0           3044
+

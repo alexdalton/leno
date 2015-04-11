@@ -1,0 +1,14 @@
+Submission points
+********************
+Lost 100 points
+
+svn: '.' is not a working copy
+******** Compilation Results: ********
+No compilation errors
+******** Grading Results: ********
+Sierpinski: 0
+drawHexagon: 0
+hexaFlake: 0
+printImage: 10
+challenge: 20
+Total functionality points 30/80

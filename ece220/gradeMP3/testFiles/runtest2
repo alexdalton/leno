@@ -1,0 +1,4 @@
+file prog3
+option stdin off
+continue
+4 8 + 

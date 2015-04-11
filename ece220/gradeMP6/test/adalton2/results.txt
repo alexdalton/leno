@@ -1,0 +1,23 @@
+Submission points
+********************
+Lost 100 points
+
+svn: '.' is not a working copy
+******** Compilation Results: ********
+Compile Errors
+make: *** No rule to make target `main.c', needed by `main.o'.  Stop.
+getRadius: 5/5
+calculateGausFilter: 10/10
+convolveImage: 35/35
+transformImage 1: 5/5
+transformImage 2: 5/5
+transformImage 3: 5/5
+transformImage 4: 5/5
+nearest pixel X: 5/5
+nearest pixel Y: 5/5
+invertImage: 5/5
+colorDodge: 5/5
+convertToGray: 3/3
+pencilSketch: 2/2
+pixelate: 5/5
+Total functionality points 100/80

@@ -1,0 +1,41 @@
+Submission points
+********************
+Lost 100 points
+
+svn: '.' is not a working copy
+******** Compilation Results: ********
+No compilation errors
+
+Test findStart on testFiles/test1.txt
+    Score: 5
+Test findStart on testFiles/test2.txt
+    Score: 5
+Test findStart on testFiles/test3.txt
+    Score: 5
+Test solveMazeDFS on testFiles/test1.txt
+    Score: 50
+Test solveMazeDFS on testFiles/test2.txt
+    Score: 50
+Test solveMazeDFS on testFiles/test3.txt
+    Score: 50
+Test solveMazeBFS on testFiles/test1.txt
+    Score: 20
+Test solveMazeBFS on testFiles/test2.txt
+    Score: 20
+Test solveMazeBFS on testFiles/test3.txt
+    Score: 20
+Test checkMaze on testFiles/check1.txt
+    Score: 5
+Test checkMaze on testFiles/check2.txt
+    Score: 5
+Test checkMaze on testFiles/check3.txt
+    Score: 5
+Test checkMaze on testFiles/check4.txt
+    Score: 5
+
+findStart: 5
+printMaze: 5
+solveMazeDFS: 50
+checkMaze: 20
+solveMazeBFS: 20
+Total: 100/80
