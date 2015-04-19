@@ -4,7 +4,6 @@ import string
 import re
 from optparse import OptionParser
 
-
 def getArgs():
     parser = OptionParser()
     parser.add_option("-b", "--mpdir", dest="mpdir",
@@ -40,14 +39,50 @@ class autoGrader:
 
     def testMP(self, results):
         for i in range(1,7):
-          results.write("********** Test Input {0}**********\n".format(i))
-          subprocess.call(["lc3sim -s testFiles/runtest{0} >> testFiles/myout{0}".format(i)], shell=True)
-          #test_results = subprocess.Popen(["python testFiles/check", "testFiles/myout{0}.txt".format(i),
-          #                                 "testFiles/out{0}.txt".format(i)], stdout=subprocess.PIPE,
-          #                                 stderr=subprocess.PIPE).communicate()
-   
-          #results.write(test_results[0])
-          #results.write("\n")
+          results.write("\n********** Test Input {0} **********\n".format(i))
+          subprocess.call(["lc3sim -s testFiles/runtest{0} > testFiles/yourOut{0}".format(i)], shell=True)
+          subprocess.call(["diff -b testFiles/yourOut{0} testFiles/ourOut{0} > testFiles/diff{0}".format(i)], 
+                          shell=True)
+          yourOut = open("testFiles/yourOut{0}".format(i), "r")
+          ourOut  = open("testFiles/ourOut{0}".format(i), "r")
+          ourSolution = {}
+          yourSolution = {}
+
+          missing_line = False
+          incorrect_value = False
+
+          for char in "@ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            yourSolution[char] = -1
+
+          for line in ourOut:
+            if re.match("[@ABCDEFGHIJKLMNOPQRSTUVWXYZ] \d", line):
+              line = line.lstrip().rstrip()
+              ourSolution[line[0]] = int(line[1:], base=16)
+
+          for line in yourOut:
+            if re.match("[@ABCDEFGHIJKLMNOPQRSTUVWXYZ] \d", line):
+               line = line.lstrip().rstrip()
+               try:
+                 value = int(line[1:], base=16)
+               except ValueError:
+                 value = -2
+                 incorrect_value = True
+               yourSolution[line[0]] = value
+
+          for char in "@ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            if yourSolution[char] == -1:
+              missing_line = True
+            if yourSolution[char] != ourSolution[char] and yourSolution[char] != -1:
+              incorrect_value = True
+
+          if missing_line is False and incorrect_value is False:
+            results.write("Test Passed!\n")
+          if missing_line:
+            results.write("Missing bins\n")
+          if incorrect_value:
+            results.write("Bin values incorrect\n")
+              
+          
 
 
     def testCompilation(self, results):
@@ -56,10 +91,10 @@ class autoGrader:
         compile_results = subprocess.Popen(["lc3as", "prog1.asm"], stdout=subprocess.PIPE,
                                            stderr=subprocess.PIPE).communicate()
         if compile_results[1]:
+            results.write("Compile Errors\n")
             results.write(compile_results[1])
-            results.write("\n")
             return False
-        results.write("No compilation errors\n\n")
+        results.write("No compilation errors\n")
         return True
 
     def runLateSub(self, results, deadline):
@@ -83,9 +118,9 @@ class autoGrader:
             results = open("results.txt", "w")
             self.copyTestFiles(studentDir)
 
-            #self.runLateSub(results, "2015-01-28 22:00")
-            if self.testCompilation(results) is False:
-                continue
+            self.runLateSub(results, "2015-01-28 22:00")
+
+            self.testCompilation(results)
             self.testMP(results)
 
             results.close()

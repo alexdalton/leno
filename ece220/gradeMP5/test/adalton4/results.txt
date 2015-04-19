@@ -1,0 +1,13 @@
+Submission points
+********************
+Lost 100 points
+
+svn: '.' is not a working copy
+******** Compilation Results: ********
+No compilation errors
+
+********** Test rootbound **********
+Test Passed
+
+********** Test newrfind **********
+Test Passed

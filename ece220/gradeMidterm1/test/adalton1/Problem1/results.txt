@@ -1,0 +1,12 @@
+******** Compilation Results: ********
+Compile Errors
+Could not open prog1.asm for reading.
+
+********** Test Input x = 2 **********
+Test passed
+
+********** Test Input x = 5 **********
+Test passed
+
+********** Test Input x = 31 **********
+Test passed

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/sp15-ece220/!svn/ver/1731/_class/_private/MP2
+END
+runtest
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/sp15-ece220/!svn/ver/1731/_class/_private/MP2/runtest
+END
+prog2.asm
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/sp15-ece220/!svn/ver/1731/_class/_private/MP2/prog2.asm
+END

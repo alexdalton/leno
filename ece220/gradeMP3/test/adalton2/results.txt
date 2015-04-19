@@ -1,0 +1,28 @@
+Submission points
+********************
+Lost 100 points
+
+svn: '.' is not a working copy
+******** Compilation Results: ********
+No compilation errors
+
+********** Test Input 1 **********
+Test passed
+
+********** Test Input 2 **********
+Test passed
+
+********** Test Input 3 **********
+Test passed
+
+********** Test Input 4 **********
+Test passed
+
+********** Test Input 5 **********
+Test passed
+
+********** Test Input 6 **********
+Test passed
+
+********** Test Input 7 **********
+Test passed

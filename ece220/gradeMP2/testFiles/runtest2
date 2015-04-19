@@ -1,0 +1,5 @@
+file prog2
+option stdin off
+continue
+4 3 * 2 7 * 5 - +
+dump x5000 x500F

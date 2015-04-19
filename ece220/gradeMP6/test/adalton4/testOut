@@ -1,0 +1,33 @@
+Testing getRadius:
+getRadius correct
+
+Testing calculateGausFilter:
+calculateGausFilter correct
+
+Testing convolveImage:
+convolveImage correct with error 0.000000 < 0.000050
+
+Testing Nearest Pixel
+nearestPixel Y value correct
+nearestPixel X value correct
+
+Testing transformImage
+transformImage with shift transform correct with error: 0.000000 < 0.030000
+transformImage with scale transform correct with error: 0.000000 < 0.030000
+transformImage with rotation transform correct with error: 0.000000 < 0.030000
+transformImage with general transform correct with error: 0.000000 < 0.030000
+
+Testing convertToGray
+convertToGray correct
+
+Testing invertImage:
+invertImage correct
+
+Testing pixelate:
+pixelate correct
+
+Testing colorDodge:
+colorDodge correct
+
+Testing pencilSketch:
+pencilSketch correct
