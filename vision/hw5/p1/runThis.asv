@@ -1,0 +1,5 @@
+%[im, person, number, subset] = readFaceImages('faces');
+
+[weights, eigenVectors, labels, error] = eigenfaces(im(subset==1),person(subset==1), 9, im(subset==1), person(subset==1));
+error
+
