@@ -1,0 +1,40 @@
+function [c, delta] = encodeLDM(x, alpha, F0)
+
+N = length(x);
+delta = sqrt(mean(diff(x).^2)) * log(2 * F0);
+xn_til = 0;
+
+c = zeros(size(x));
+d = zeros(size(x));
+d_hat = zeros(size(x));
+x_hat = zeros(size(x));
+x_til = zeros(size(x));
+
+d(1) = x(1);
+c(n) = 0;
+d
+for n = 2:N
+    d(n) = x(n) - x_til(n);
+    if d(n) >= 0
+        c(n) = 0;
+        d_hat(n) = delta;
+    else
+        c(n) = 0;
+        d_hat(n) = -delta;
+    end
+    
+    if n > 1
+        x_hat(n) = d_hat(n) + x_til(n - 1);
+    else
+        x_hat(n) = d_hat(n);
+    end
+    
+    x_til(n) = 
+    
+    
+
+    xn_hat = dn + xn_til;
+    xn_til = xn_hat * alpha;    
+end
+
+end
