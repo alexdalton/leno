@@ -1,0 +1,10 @@
+function x_hat = decodeLDM(y, delta, alpha)
+
+x_hat = zeros(size(y));
+N = length(y);
+
+for i = 1:N
+    
+end
+
+end

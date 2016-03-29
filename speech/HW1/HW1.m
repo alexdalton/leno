@@ -61,7 +61,6 @@ k_delta_w = startOmega:2*pi:endOmega;
 % title('P(L=17, w) for Constant Area Function');
 % xlabel('Frequency (Hz)');
 % ylabel('Pressure at L = 17');
-p = Webster(ones(size(x)), deltaX, p_zero, p_minus_one, k_delta_w);
 % plot(k_delta_w / (2*pi), zeros(size(k_delta_w)), 'color', 'r');
 % plot(k_delta_w / (2*pi), p)
 % hold off;

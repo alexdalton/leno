@@ -1,0 +1,14 @@
+load s1.mat;
+load s2.mat;
+
+[alpha1, R] = LPC(s1);
+[alpha2, ~] = LPC(s2);
+
+alpha_interpolated = zeros(length(s1) - 99, size(alpha1, 2));
+for i = 1:size(alpha1, 2)
+    alpha_interpolated(:, i) = interp1(alpha1(:, i), 1:size(alpha1, 1)/length(s1):size(alpha1, 1));
+end
+    
+s1_hat = s
+for i = 1:length(s1)
+end

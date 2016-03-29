@@ -1,0 +1,34 @@
+function R = acAnalysis(S)
+N = 300;
+M = 100;
+p = 10;
+alpha = 0.95;
+sLength = length(S);
+numFrames = ceil(sLength / 100);
+
+window = 0.54 - 0.46 * cos(2 * pi * (0:N - 1) / (N - 1));
+window = window';
+
+% preemphasis process
+S_tilda = zeros(size(S));
+S_tilda(1) = S(1);
+for i = 2:sLength
+    S_tilda(i) = S(i) - alpha * S(i - 1);
+end
+
+r = zeros(numFrames, p + 1);
+for i = 1:M:sLength
+    if (i + N - 1) > sLength
+        xFrame = [S_tilda(i:end) zeros(1, N - sLength + i - 1)];
+    else
+        xFrame = S_tilda(i:i + N - 1);
+    end
+    
+    xFrame_tilda = xFrame .* window;
+    xFrame_corr = xcorr(xFrame_tilda, p);
+    length(xFrame_corr(p: 2 * p + 1)
+    r(floor(i / M) + 1, :) = xFrame_corr(p: 2 * p + 1);
+end
+
+R = 0;
+end

@@ -1,0 +1,14 @@
+load sentence1.mat
+
+minAmp = min(y);
+maxAmp = max(y);
+
+delta = (maxAmp - minAmp) / 256
+
+N = length(y);
+c = zeros(size(y));
+
+for n = 1:N
+    y(n) / delta;
+end
+
