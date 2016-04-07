@@ -1,0 +1,16 @@
+#/bin/sh
+
+if [ ! -r students.txt ] ; then
+    echo "Need a list of netids in students.txt"
+    exit
+else
+    echo "Found list of students."
+fi
+
+for netid in `cat students.txt` ; do
+    svn info https://subversion.ews.illinois.edu/svn/sp16-ece220/$netid/mp6/test.c
+    error=$?
+    if [ $error -ne 0 ] ; then
+	echo $netid >> missed.txt
+    fi
+done

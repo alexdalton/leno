@@ -1,0 +1,13 @@
+#/bin/sh
+
+if [ ! -r students.txt ] ; then
+    echo "Need a list of netids in students.txt"
+    exit
+else
+    echo "Found list of students."
+fi
+
+for netid in `cat students.txt` ; do
+    echo "$netid"
+    svn import ./dist -m "Uploading mp6" https://subversion.ews.illinois.edu/svn/sp16-ece220/$netid/mp6
+done
